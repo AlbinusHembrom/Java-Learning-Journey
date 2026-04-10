@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Calculator_Method {
+public class AHCalculator_Method {
 
     // Method 1: Addition
     public static int add(int num1, int num2) {
@@ -30,14 +30,14 @@ public class Calculator_Method {
 
         // Enter two numbers from user
         System.out.print("Enter 1st number : ");
-        int num1 = sc.nextInt();
+        int ahNum1 = sc.nextInt();
         System.out.print("Enter 2nd number : ");
-        int num2 = sc.nextInt();
+        int ahNum2 = sc.nextInt();
 
         // Call methods and print value
-        System.out.println("Addition of two number : " + add(num1,num2));
-        System.out.println("Subtraction of two number : " + sub(num1,num2));
-        System.out.println("Product of two number : " + multiply(num1,num2));
-        System.out.println("Division of two number : " + divide(num1,num2));
+        System.out.println("Addition of two number : " + add(ahNum1,ahNum2));
+        System.out.println("Subtraction of two number : " + sub(ahNum1,ahNum2));
+        System.out.println("Product of two number : " + multiply(ahNum1,ahNum2));
+        System.out.println("Division of two number : " + divide(ahNum1,ahNum2));
     }
 }

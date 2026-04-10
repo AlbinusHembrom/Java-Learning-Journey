@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Sum {
+public class SimpleCalculator {
     public static void main(String[] args){
         // Create a variable to enter the value
         Scanner sc = new Scanner(System.in);

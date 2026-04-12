@@ -36,7 +36,7 @@ To run this project, you will need:
 Below are the screenshots of the program execution. The first shows the data entry process, and the second shows the final billing and object tracking logic.
 
 ### Part 1: Data Entry
-![Entry Process](screenshots/output_1.png)
+![Entry Process](screenshots/Output_1.png)
 
 ### Part 2: Final Bill and Static Count
-![Final Results](screenshots/output_2.png)
+![Final Results](screenshots/Output_2.png)

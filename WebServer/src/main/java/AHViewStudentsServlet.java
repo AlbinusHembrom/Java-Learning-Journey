@@ -15,22 +15,17 @@ import java.util.Map;
 @WebServlet("/viewStudents")
 public class AHViewStudentsServlet extends HttpServlet {
 
-    // 1. Handle POST: Triggered when you submit the "View All" form with the password
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String formPass = request.getParameter("dbPass");
-
-        // Save the password in a Session so it lasts until the browser is closed
         HttpSession session = request.getSession();
         session.setAttribute("savedPass", formPass);
 
-        // After saving, run the display logic (doGet)
         doGet(request, response);
     }
 
-    // 2. Handle GET: Triggered when you click a link or after the doPost finishes
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,7 +33,6 @@ public class AHViewStudentsServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String dbPass = (String) session.getAttribute("savedPass");
 
-        // Safety Check: If no password is found in session, send them back to login
         if (dbPass == null) {
             response.sendRedirect("index.jsp");
             return;
@@ -49,7 +43,6 @@ public class AHViewStudentsServlet extends HttpServlet {
         String user = "root";
 
         try {
-            // Load the MySQL Driver (Crucial for offline/E-drive setups)
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             try (Connection conn = DriverManager.getConnection(url, user, dbPass);
@@ -60,22 +53,26 @@ public class AHViewStudentsServlet extends HttpServlet {
                     Map<String, String> student = new HashMap<>();
                     student.put("id", rs.getString("id"));
                     student.put("name", rs.getString("name"));
-                    student.put("subject", rs.getString("subject"));
-                    student.put("marks", rs.getString("marks"));
+                    // The 6 AKTU Subjects
+                    student.put("oops", rs.getString("oops"));
+                    student.put("tafl", rs.getString("tafl"));
+                    student.put("maths4", rs.getString("maths4"));
+                    student.put("os", rs.getString("os"));
+                    student.put("python", rs.getString("python"));
+                    student.put("uhv", rs.getString("uhv"));
+
                     studentList.add(student);
                 }
             }
 
-            // Pass the list to display.jsp
             request.setAttribute("students", studentList);
             request.getRequestDispatcher("display.jsp").forward(request, response);
 
         } catch (ClassNotFoundException e) {
             response.getWriter().println("<h1>Driver Error:</h1><p>Check if Connector J is in WEB-INF/lib</p>");
         } catch (SQLException e) {
-            // This will catch "Access Denied" if the password was wrong
             response.getWriter().println("<h1>Database Error:</h1><p>" + e.getMessage() + "</p>");
-            response.getWriter().println("<a href='index.jsp'>Try again with correct password</a>");
+            response.getWriter().println("<br><a href='index.jsp'>Back to Home</a>");
         }
     }
 }

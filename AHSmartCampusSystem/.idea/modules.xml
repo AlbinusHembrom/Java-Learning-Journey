@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/gnc-java-final-assessment-smartcampus.iml" filepath="$PROJECT_DIR$/gnc-java-final-assessment-smartcampus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AHSmartCampusSystem.iml" filepath="$PROJECT_DIR$/AHSmartCampusSystem.iml" />
     </modules>
   </component>
 </project>

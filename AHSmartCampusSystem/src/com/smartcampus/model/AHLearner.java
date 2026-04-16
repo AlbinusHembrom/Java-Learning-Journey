@@ -1,6 +1,8 @@
 package com.smartcampus.model;
 
-public class AHLearner {
+import java.io.Serializable;
+
+public class AHLearner implements Serializable {
     private int ahId;
     private String ahName;
     private String ahEmail;
@@ -13,6 +15,9 @@ public class AHLearner {
 
     public int getId() { return ahId; }
     public String getName() { return ahName; }
+
     @Override
-    public String toString() { return "Learner[ID=" + ahId + ", Name=" + ahName + "]"; }
+    public String toString() {
+        return "Learner[ID=" + ahId + ", Name=" + ahName + "]";
+    }
 }

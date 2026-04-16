@@ -3,7 +3,7 @@
 **Developer:** ALBINUS HEMBROM  
 **Date:** April 16, 2026  
 **Course:** CORE & ADVANCE JAVA TRAINING  
-**Repository:** `[gnc-java-final-assessment-smartcampus](https://github.com/AlbinusHembrom/Java-Learning-Journey/tree/main/AHSmartCampusSystem)`
+**Repository:** `Java-Learning-Journey/tree/main/AHSmartCampusSystem`
 
 ---
 

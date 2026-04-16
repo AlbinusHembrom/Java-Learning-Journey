@@ -1,4 +1,4 @@
-# 🎓 SmartCampus Management System (Final Assessment)
+#  SmartCampus Management System (Final Assessment)
 
 **Developer:** ALBINUS HEMBROM  
 **Date:** April 16, 2026  
